@@ -1,9 +1,18 @@
 # Preparing a Lab
 
-Preparing a lab is fairly easy: you simply put your tutorial together as a single Jupyter notebook while following a couple of formatting conventions, and place image assets and data into predefined locations. Key things to keep in mind:
+The process is meant to be easy: format your tutorial as a (single) Jupyter notebook while following conventions described below. It's probably easiest to follow this example: https://github.com/rationalmatter/lab-iris-scikit-learn — this repo is exactly what a lab would look like before it's embedded into the app.
+
+<details><summary>And this is how this same lab will look in the app. Click to expand.</summary>
+<p align="center">
+  <img src="img/iris-lab-in-app-2.png" width="900" title="App screenshot showing Iris lab">
+  <img src="img/iris-lab-in-app-3.png" width="900" title="App screenshot showing Iris lab">
+  <img src="img/iris-lab-in-app-4.png" width="900" title="App screenshot showing Iris lab">
+  <img src="img/iris-lab-in-app-5.png" width="900" title="App screenshot showing Iris lab">
+</p>
+</details>
 
 ## Environment
-The app comes with a specific Python environment, and labs should be prepared using the same versions of interpreter and packages. You can download the [environment.yml](environment.yml) file from this repo to re-create this exact environment on your machine with conda. You can use any additional pure Python packages, which are not in the .yml file — as long as they don't have native extensions (.c files compiled into libraries). Put all additional packages into the _Packages_ folder, and assume they will be available for import anywhere in the notebook. Mind that although `pip` is in the environment file, it will not be available in the app.
+The app comes with a specific Python environment, and labs should be prepared using the same versions of interpreter and packages. You can download the [environment.yml](environment.yml) file from this repo to re-create this exact environment on your machine with conda. You can also use additional pure Python packages, which are not in the .yml file — as long as they don't have native extensions (.c files compiled into libraries). Put all additional packages into the _Packages_ folder, and assume they will be available for import anywhere in the notebook. Mind that although `pip` is in the environment file, it will not be available in the app.
 
 > Although you can't use some "big name" packages like TensorFlow or PyTorch (at least for now), current environment already has plenty of packages to work with: SciPy, Scikit-learn, Pandas, LXML, Matplotlib, NumPy, Pillow and others.
 
