@@ -3,7 +3,9 @@
 Preparing a lab is fairly easy: you simply put your tutorial together as a single Jupyter notebook while following a couple of formatting conventions, and place image assets and data into predefined locations. Key things to keep in mind:
 
 ## Environment
-The app comes with a specific Python environment, and labs should be prepared using the same versions of interpreter and packages. The [environment.yml](environment.yml) file in conda format is in this repo. You can use any additional pure Python packages, which are not in the .yml file — as long as they don't have native extensions (i.e. no compiled native code in a form of libraries). Put all additional packages into the _Packages_ folder, and assume they will be available for import anywhere in the notebook. Mind that although `pip` is in the environment file, it will not be available in the app. 
+The app comes with a specific Python environment, and labs should be prepared using the same versions of interpreter and packages. You can download the [environment.yml](environment.yml) file from this repo to re-create this exact environment on your machine with conda. You can use any additional pure Python packages, which are not in the .yml file — as long as they don't have native extensions (.c files compiled into libraries). Put all additional packages into the _Packages_ folder, and assume they will be available for import anywhere in the notebook. Mind that although `pip` is in the environment file, it will not be available in the app.
+
+> Although you can't use some "big name" packages like TensorFlow or PyTorch (at least for now), current environment already has plenty of packages to work with: SciPy, Scikit-learn, Pandas, LXML, Matplotlib, NumPy, Pillow and others.
 
 ## Manifests
 This is a fancy word for text cells with a simple YAML configuration, which will indicate where each chapter and page begins in your notebook. Put manifest for every chapter and page in a separate "Raw" cell: 
