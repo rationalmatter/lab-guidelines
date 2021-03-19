@@ -6,28 +6,30 @@ Preparing a lab is fairly easy: you simply put your tutorial together as a singl
 The app comes with a specific Python environment, and labs should be prepared using the same versions of interpreter and packages. The [environment.yml](environment.yml) file in conda format is in this repo. You can use any additional pure Python packages, which are not in the .yml file — as long as they don't have native extensions (i.e. no compiled native code in a form of libraries). Put all additional packages into the _Packages_ folder, and assume they will be available for import anywhere in the notebook. Mind that although `pip` is in the environment file, it will not be available in the app. 
 
 ## Manifests
-This is a fancy word for text cells with a simple YAML configuration, which will indicate where each chapter and page begins. Put manifest for every chapter and page in a separate "Raw" cell: 
+This is a fancy word for text cells with a simple YAML configuration, which will indicate where each chapter and page begins in your notebook. Put manifest for every chapter and page in a separate "Raw" cell: 
 
 <p align="center">
   <img src="img/manifest-cell.png" width="450" title="Example of chapter and page manifest cells">
 </p>
 
-Mind that `iconIdentifier` here is the name of a [SF Symbols](https://developer.apple.com/sf-symbols/) glyph (you can check out some of them here: https://github.com/cyanzhong/sf-symbols-online) — it is optional, and if you don't provide one, a generic icon will be used. The first cell in notebook must have the lab manifest, the fields should be self-explanatory (please refer to the example lab notebook).
+> Mind that `iconIdentifier` here is the name of a [SF Symbols](https://developer.apple.com/sf-symbols/) glyph (you can check out some of them here: https://github.com/cyanzhong/sf-symbols-online) — it is optional, and if you don't provide one, a generic icon will be used. 
+
+Manifest cells mark the beginning of a new chapter or page, and there are no "closing" markings; chapters and pages are assumed to go on until the next one begins. Additionally, the first cell of the notebook should have a lab manifest, specifying lab title, brief description and author name (see lab example).
 
 ## Folder structure
-As mentioned earlier, additional Python packages go to the _Packages_ directory. All data used in notebook should go to the _Data_ folder, and all image assets used in Markdown cells should go to _Assets_ folder. Each page using assets in Markdown cells should specify them in its Manifest:
+As mentioned earlier, additional Python packages go to the _Packages_ directory. All data should be in _Data_ folder, and all images from Markdown cells should be in _Assets_ folder. Each page referencing images in Markdown cells should specify them in the manifest:
 
 <p align="center">
   <img src="img/page-assets-in-manifest.png" width="650" title="Example of a page manifest cell using image assets">
 </p>
 
 ## Content guidelines
-A few tips on what kind of content the app was designed for:
+A few things that will make a lab look and feel its best in the app:
 1. A lab would usually have narrative structure of a step-by-step tutorial, separated into chapters and pages with continuity in mind.
-2. Prefer smaller pages and consider breaking down long ones. Keep in mind that _Run Code_ button will execute all code cells on a page at once, so this would work best with pages that fit on a screen without too much scrolling.
-3. Use more text and images! Everything that Jupyter supports will be rendered correctly, including HTML, LaTeX formulas, etc. If you have multiple headings on the page, keep in mind that page title will appear as a level 1 heading at the top of the page, it will be rendered automatically by the app.
-4. Don't expect the pages to be opened and executed one after another, the user should be able to jump to an arbitrary page. Don't worry about initialising variables in code cells: the app will correctly set interpreter state for each page, including imported modules and variables initialised on earlier pages. But don't rely on files created on disk in earlier pages, those are not part of the page "context".
-5. Consider using smaller datasets. For example, one of our sample labs operates with a smaller MNIST dataset which only has 10,000 examples from the original 70,000. It makes final labs much smaller, not to mention it takes less time to train a model on 10,000 examples, while illustrating the point just as well. Remember, all code is executed locally, using device's hardware.
+2. Prefer smaller pages and consider breaking down long ones. Keep in mind that _Run Code_ button will execute all code cells on a page at once, so this would work best with pages that fit on a single screen without too much scrolling.
+3. Use more text and images! Everything that Jupyter supports will be rendered correctly, including HTML, LaTeX formulas, etc. If you have multiple headings on the page, keep in mind that page title will appear as a level 1 heading at the top of the page, rendered automatically by the app.
+4. Don't expect the pages to be opened and executed one after another, the user should be able to jump to an arbitrary page. Don't worry about initialising variables in code cells: the app will correctly set interpreter state for each page, including variables initialised on previous pages, or modules imported earlier. But don't rely on files created on disk in earlier pages, those are not part of the page "context".
+5. Consider using smaller datasets. For example, one of our sample labs operates with a smaller MNIST dataset which only has 10,000 examples from the original 70,000. It makes final labs much smaller, not to mention it takes less time to train a model, while illustrating the point just as well. Remember, all code is executed locally, using device's hardware (so performance could become a constraint for complex computations).
 
 ## Bonus Tips
 <details><summary>Finally, a few bonus "pro" tips! 😁 These are completely optional to follow, but perhaps they will make your life a bit easier, or let you do something cool. Click to expand.</summary>
