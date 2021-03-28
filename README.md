@@ -51,8 +51,8 @@ Cells that start with "---" are ignored and won't appear in the final lab ("---"
 ### Hidden cells
 JupyterLab lets you hide cells by clicking the blue cell selection indicator to the left of the cell. Hidden cells will not be shown on the lab page, but the code in them _will_ get executed with all other code cells on page when user taps _Run Code_ button.
 
-### Separate images for light and dark themes
-The app supports light and dark interface themes, and you can add separate light and dark variants of an image that you embed into a Markdown cell — with a bit of HTML. Under the hood, the app will inject the following CSS into each lab page:
+### Different images for light and dark themes
+The app supports light and dark interface themes, and you can add separate light and dark variants of an image that you embed into a Markdown cell — with a bit of HTML. For example, under the hood, the app will inject the following CSS into each lab page, whenever (and only when) _dark_ UI theme is active:
 
 ```css
 .juno_ui_theme_light {
