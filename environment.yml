@@ -10,6 +10,7 @@ dependencies:
     - backcall==0.1.0
     - certifi==2020.12.5
     - cryptography=3.4.6
+    - cvxopt==1.2.6
     - cycler==0.10.0
     - python-dateutil==2.8.0
     - decorator==4.3.2
@@ -39,6 +40,7 @@ dependencies:
     - openpyxl==2.6.3
     - pandas==1.0.3
     - pandocfilters==1.4.2
+    - patsy==0.5.1
     - pexpect==4.6.0
     - pickleshare==0.7.5
     - Pillow==8.1.2
@@ -54,6 +56,7 @@ dependencies:
     - scipy==1.4.0
     - simplegeneric==0.8.1
     - six==1.15.0
+    - statsmodels==0.12.2
     - testpath==0.4.2
     - threadpoolctl==2.0.0
     - tornado==4.5.3
