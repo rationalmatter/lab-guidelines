@@ -1,8 +1,8 @@
 # Preparing a Lab
 
-The process is meant to be easy: format your tutorial as a (single) Jupyter notebook while following conventions described below. It's probably easiest to follow this example: https://github.com/rationalmatter/lab-iris-scikit-learn — this repo is exactly what a lab would look like before it's embedded into the app.
+The process is meant to be easy: format your tutorial as a (single) Jupyter notebook while following conventions described below.
 
-<details><summary>And this is how this same lab will look in the app. Click to expand.</summary>
+<details><summary>This is how a lab will look in the app. Click to expand.</summary>
 <p align="center">
   <img src="img/iris-lab-in-app-2.png" width="900" title="App screenshot showing Iris lab">
   <img src="img/iris-lab-in-app-3.png" width="900" title="App screenshot showing Iris lab">
@@ -11,28 +11,16 @@ The process is meant to be easy: format your tutorial as a (single) Jupyter note
 </p>
 </details>
 
+## Chapters and pages
+Your Jupyter notebook will be automatically sliced into chapters and pages. You can assume that first-level headers (e.g.`# Title`) will become chapters, second-level headers (e.g. `## Title`) will become pages, and all further-level headers will just appear on the page.
+
+## Folder structure
+All data should be in _Data_ folder, and all images from Markdown cells should be in _Assets_ folder. As mentioned down below, additional Python packages go to the _Packages_ directory. 
+
 ## Environment
 The app comes with a specific Python environment, and labs should be prepared using the same versions of interpreter and packages. You can download the [environment.yml](environment.yml) file from this repo to re-create this exact environment on your machine with conda. You can also use additional pure Python packages, which are not in the .yml file — as long as they don't have native extensions (.c files compiled into libraries). Put all additional packages into the _Packages_ folder, and assume they will be available for import anywhere in the notebook. Mind that although `pip` is in the environment file, it will not be available in the app.
 
 > Although you can't use some "big name" packages like TensorFlow or PyTorch (at least for now), current environment already has plenty of packages to work with: SciPy, Scikit-learn, Pandas, LXML, Matplotlib, NumPy, Pillow and others.
-
-## Manifests
-This is a fancy word for text cells with a simple YAML configuration, which will indicate where each chapter and page begins in your notebook. Put manifest for every chapter and page in a separate "Raw" cell: 
-
-<p align="center">
-  <img src="img/manifest-cell.png" width="450" title="Example of chapter and page manifest cells">
-</p>
-
-> Mind that `iconIdentifier` here is the name of a [SF Symbols](https://developer.apple.com/sf-symbols/) glyph (you can check out some of them here: https://github.com/cyanzhong/sf-symbols-online) — it is optional, and if you don't provide one, a generic icon will be used. 
-
-Manifest cells mark the beginning of a new chapter or page, and there are no "closing" markings; chapters and pages are assumed to go on until the next one begins. Additionally, the first cell of the notebook should have a lab manifest, specifying lab title, brief description and author name (see lab example).
-
-## Folder structure
-As mentioned earlier, additional Python packages go to the _Packages_ directory. All data should be in _Data_ folder, and all images from Markdown cells should be in _Assets_ folder. Each page referencing images in Markdown cells should specify them in the manifest:
-
-<p align="center">
-  <img src="img/page-assets-in-manifest.png" width="650" title="Example of a page manifest cell using image assets">
-</p>
 
 ## Content guidelines
 A few things that will make a lab look and feel its best in the app:
@@ -44,9 +32,6 @@ A few things that will make a lab look and feel its best in the app:
 
 ## Bonus Tips
 <details><summary>Finally, a few bonus "pro" tips! 😁 These are completely optional to follow, but perhaps they will make your life a bit easier, or let you do something cool. Click to expand.</summary>
-  
-### Ignored cells  
-Cells that start with "---" are ignored and won't appear in the final lab ("---" is rendered as horizontal line in Jupyter). Could be useful to visually separate pages or chapters while working on the notebook.
 
 ### Hidden cells
 JupyterLab lets you hide cells by clicking the blue cell selection indicator to the left of the cell. Hidden cells will not be shown on the lab page, but the code in them _will_ get executed with all other code cells on page when user taps _Run Code_ button.
