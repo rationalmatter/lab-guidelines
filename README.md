@@ -53,7 +53,7 @@ Basically, this means that this HTML code in a Markdown cell will display `nn_li
 <img src="Assets/nn_light.png" class="juno_ui_theme_light" style="display: inline-block;"><img src="Assets/nn_dark.png" class="juno_ui_theme_dark" style="display: none;">
 ```
 
-### Continuity
+### Don't rely too much on narrative context
 Don't expect the pages to be opened and executed one after another, the user should be able to jump to an arbitrary page. Don't worry about initialising variables in code cells: the app will correctly set interpreter state for each page, including variables initialised on previous pages, or modules imported earlier. But don't rely on files created on disk in earlier pages, those are not part of the page "context".
   
 ### Consider using smaller datasets
