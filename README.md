@@ -12,7 +12,7 @@ The process is meant to be easy: format your tutorial as a (single) Jupyter note
 </details>
 
 ## Chapters and pages
-Your Jupyter notebook will be automatically sliced into chapters and pages. You can assume that first-level headers (e.g.`# Title`) will become chapters, second-level headers (e.g. `## Title`) will become pages, and all further-level headers will just appear on the page.
+Your Jupyter notebook will be automatically sliced into chapters and pages. You can assume that first-level headers (e.g.`# Title`) will become chapters, second-level headers (e.g. `## Title`) will become pages, and all further-level headers will just appear on the page as-is.
 
 ## Folder structure
 All data should be in _Data_ folder, and all images from Markdown cells should be in _Assets_ folder. As mentioned down below, additional Python packages go to the _Packages_ directory. 
