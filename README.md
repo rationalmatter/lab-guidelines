@@ -26,9 +26,7 @@ The app comes with a specific Python environment, and labs should be prepared us
 A few things that will make a lab look and feel its best in the app:
 * A lab would usually have narrative structure of a step-by-step tutorial, separated into chapters and pages with continuity in mind.
 * Prefer smaller pages and consider breaking down long ones. Keep in mind that _Run Code_ button will execute all code cells on a page at once, so this would work best with pages that fit on a single screen without too much scrolling.
-* Use more text and images! Everything that Jupyter supports will be rendered correctly, including HTML, LaTeX formulas, etc. If you have multiple headings on the page, keep in mind that page title will appear as a level 1 heading at the top of the page, rendered automatically by the app.
-* Don't expect the pages to be opened and executed one after another, the user should be able to jump to an arbitrary page. Don't worry about initialising variables in code cells: the app will correctly set interpreter state for each page, including variables initialised on previous pages, or modules imported earlier. But don't rely on files created on disk in earlier pages, those are not part of the page "context".
-* Consider using smaller datasets. For example, one of our sample labs operates with a smaller MNIST dataset which only has 10,000 examples from the original 70,000. It makes final labs much smaller, not to mention it takes less time to train a model, while illustrating the point just as well. Remember, all code is executed locally, using device's hardware (so performance could become a constraint for complex computations).
+* Use more text and images! Everything that Jupyter supports will be rendered correctly, including interactive Bokeh plots, HTML, LaTeX formulas, etc.
 
 ## Bonus Tips
 <details><summary>Finally, a few bonus "pro" tips! 😁 These are completely optional to follow, but perhaps they will make your life a bit easier, or let you do something cool. Click to expand.</summary>
@@ -54,6 +52,12 @@ Basically, this means that this HTML code in a Markdown cell will display `nn_li
 ```html
 <img src="Assets/nn_light.png" class="juno_ui_theme_light" style="display: inline-block;"><img src="Assets/nn_dark.png" class="juno_ui_theme_dark" style="display: none;">
 ```
+
+### Don't rely too much on narrative context
+Don't expect the pages to be opened and executed one after another, the user should be able to jump to an arbitrary page. Don't worry about initialising variables in code cells: the app will correctly set interpreter state for each page, including variables initialised on previous pages, or modules imported earlier. But don't rely on files created on disk in earlier pages, those are not part of the page "context".
+  
+### Consider using smaller datasets
+Try to keep lab's performance footprint at minimum: for example, use smaller datasets. One of our sample labs operates with a smaller MNIST dataset which only has 10,000 examples from the original 70,000 — it makes final labs much smaller, not to mention it takes less time to train a model, while illustrating the point just as well. Remember, all code is executed locally, using device's hardware (so performance could become a constraint for complex computations).
 
 ### Clear unused variables
 Finally, it's a good practice to delete variables and clear other resources you no longer use in the rest of the lab. Use a hidden code cell at the end of the page for this:
