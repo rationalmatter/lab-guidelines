@@ -50,7 +50,7 @@ The app supports light and dark interface themes, and you can add separate light
 Basically, this means that this HTML code in a Markdown cell will display `nn_light.png` image for light UI theme, and `nn_dark.png` when dark mode is enabled:
 
 ```html
-<img src="Assets/nn_light.png" class="juno_ui_theme_light" style="display: inline-block;"><img src="Assets/nn_dark.png" class="juno_ui_theme_dark" style="display: none;">
+<img src="Assets/nn_light.png" class="juno_ui_theme_light"><img src="Assets/nn_dark.png" class="juno_ui_theme_dark">
 ```
 
 ### Don't rely too much on narrative context
